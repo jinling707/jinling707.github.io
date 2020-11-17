@@ -4,6 +4,8 @@
     <title>ForegroundService</title>
     <url>/2020/11/13/Android_ForegroundService/</url>
     <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>使用前台服務須創造一通知，讓用戶主動意識到您的應用正在前台執行任務，並且正在消耗系統資源。除非服務已停止或從前台刪除，否則無法取消該通知。</p>
+<a id="more"></a>
+
 <p>前台服務的應用示例包括：<br>在前台服務中播放音樂的音樂播放器應用。該通知可能會顯示當前正在播放的歌曲。<br>健身應用程序，在收到用戶的許可後，將其記錄在前台服務中。該通知可能會顯示用戶在當前健身會話期間旅行的距離。</p>
 <h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><h4 id="權限"><a href="#權限" class="headerlink" title="權限"></a>權限</h4><p>Android 9（API級別28）或更高版本，使用必須添加權限</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;uses-permission android:name=<span class="string">&quot;android.permission.FOREGROUND_SERVICE&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
@@ -31,7 +33,8 @@
   <entry>
     <title>Permission</title>
     <url>/2020/11/17/Android_Permission/</url>
-    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>權限 的目的是保護Android用戶的隱私。<br>在Android6 sdk23 以上要求使用。</p>
+    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>權限的目的是保護Android用戶的隱私。<br>在Android6 sdk23 以上要求使用。</p>
+<a id="more"></a>
 <h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><h4 id="普通權限"><a href="#普通權限" class="headerlink" title="普通權限"></a>普通權限</h4><p>對用戶的隱私或其他應用的操作風險很小。需在Manifest聲明，但不需詢問使用者同意便可使用。</p>
 <h4 id="危險權限"><a href="#危險權限" class="headerlink" title="危險權限"></a>危險權限</h4><p>需要涉及用戶私人信息、數據或資源的區域，或可能影響用戶存儲的數據，或是其他應用程序的操作。需在Manifest聲明，且需詢問使用者的同意才可使用。</p>
 <h5 id="危險權限-權限組"><a href="#危險權限-權限組" class="headerlink" title="危險權限-權限組"></a>危險權限-權限組</h5><p>所有危險的 Android 系統權限都屬於權限組。<br>向用戶要求權限的對話框不會描述該具體權限，例如，如果應用請求 READ_CONTACTS 權限，系統對話框只說明該應用需要訪問設備的聯繫信息。而在該權限組中，只要有其中一權限被使用者允許，則該權限組的所有權限皆視為允許。</p>
@@ -62,7 +65,8 @@
   <entry>
     <title>SdkVersion</title>
     <url>/2020/11/17/Android_SdkVersion/</url>
-    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>可通過API的級別來表示應用程序與Android平台的一個或多個版本的兼容性</p>
+    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>介紹minSdkVersion、compileSdkVersion、targetSdkVersion<br>可通過API的級別來表示應用程序與Android平台的一個或多個版本的兼容性</p>
+<a id="more"></a>
 <h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><h4 id="minSdkVersion"><a href="#minSdkVersion" class="headerlink" title="minSdkVersion"></a>minSdkVersion</h4><p>App最小可以支援的版本。(可由Android Studio查詢現有行動裝置的版本比例，藉此確定使用minSdkVersion級別)<br>在Play Store中，用戶的裝置版本若小於APP的minSdkVersion，那Play Store便不向該用戶顯示此App。</p>
 <p>在開發時，會依minSdkVersion來警告你，是否用了高於minSdkVersion的API，避免調用不存在的API，造成運行問題。</p>
 <h4 id="compileSdkVersion"><a href="#compileSdkVersion" class="headerlink" title="compileSdkVersion"></a>compileSdkVersion</h4><p>Gradle用的AndroidSDK編譯版本。<br>官方強烈推薦用最新的SDK進行編譯<br>(在開發中的應用程式，提醒已棄用的API，也為使用新的API做好準備)</p>
@@ -83,6 +87,7 @@
     <title>Hello World2000 哈囉</title>
     <url>/2018/04/11/hello-world2/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>

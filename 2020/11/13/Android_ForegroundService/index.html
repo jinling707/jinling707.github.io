@@ -24,15 +24,15 @@
     var CONFIG = {"hostname":"jinling707.github.io","root":"/","images":"/images","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="簡介使用前台服務須創造一通知，讓用戶主動意識到您的應用正在前台執行任務，並且正在消耗系統資源。除非服務已停止或從前台刪除，否則無法取消該通知。 前台服務的應用示例包括：在前台服務中播放音樂的音樂播放器應用。該通知可能會顯示當前正在播放的歌曲。健身應用程序，在收到用戶的許可後，將其記錄在前台服務中。該通知可能會顯示用戶在當前健身會話期間旅行的距離。 說明權限Android 9（API級別28）或更高">
+  <meta name="description" content="簡介使用前台服務須創造一通知，讓用戶主動意識到您的應用正在前台執行任務，並且正在消耗系統資源。除非服務已停止或從前台刪除，否則無法取消該通知。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ForegroundService">
 <meta property="og:url" content="https://jinling707.github.io/2020/11/13/Android_ForegroundService/index.html">
 <meta property="og:site_name" content="JIN LING">
-<meta property="og:description" content="簡介使用前台服務須創造一通知，讓用戶主動意識到您的應用正在前台執行任務，並且正在消耗系統資源。除非服務已停止或從前台刪除，否則無法取消該通知。 前台服務的應用示例包括：在前台服務中播放音樂的音樂播放器應用。該通知可能會顯示當前正在播放的歌曲。健身應用程序，在收到用戶的許可後，將其記錄在前台服務中。該通知可能會顯示用戶在當前健身會話期間旅行的距離。 說明權限Android 9（API級別28）或更高">
+<meta property="og:description" content="簡介使用前台服務須創造一通知，讓用戶主動意識到您的應用正在前台執行任務，並且正在消耗系統資源。除非服務已停止或從前台刪除，否則無法取消該通知。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-11-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-17T04:36:23.709Z">
+<meta property="article:modified_time" content="2020-11-17T09:46:24.876Z">
 <meta property="article:author" content="Jin Ling">
 <meta property="article:tag" content="Android Service">
 <meta name="twitter:card" content="summary">
@@ -321,7 +321,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新於</span>
-        <time title="修改時間：2020-11-17 12:36:23" itemprop="dateModified" datetime="2020-11-17T12:36:23+08:00">2020-11-17</time>
+        <time title="修改時間：2020-11-17 17:46:24" itemprop="dateModified" datetime="2020-11-17T17:46:24+08:00">2020-11-17</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -344,6 +344,8 @@
     
     <div class="post-body" itemprop="articleBody">
         <h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>使用前台服務須創造一通知，讓用戶主動意識到您的應用正在前台執行任務，並且正在消耗系統資源。除非服務已停止或從前台刪除，否則無法取消該通知。</p>
+<a id="more"></a>
+
 <p>前台服務的應用示例包括：<br>在前台服務中播放音樂的音樂播放器應用。該通知可能會顯示當前正在播放的歌曲。<br>健身應用程序，在收到用戶的許可後，將其記錄在前台服務中。該通知可能會顯示用戶在當前健身會話期間旅行的距離。</p>
 <h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><h4 id="權限"><a href="#權限" class="headerlink" title="權限"></a>權限</h4><p>Android 9（API級別28）或更高版本，使用必須添加權限</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=<span class="string">&quot;android.permission.FOREGROUND_SERVICE&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>

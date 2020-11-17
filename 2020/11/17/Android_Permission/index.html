@@ -24,15 +24,15 @@
     var CONFIG = {"hostname":"jinling707.github.io","root":"/","images":"/images","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="簡介權限 的目的是保護Android用戶的隱私。在Android6 sdk23 以上要求使用。 說明普通權限對用戶的隱私或其他應用的操作風險很小。需在Manifest聲明，但不需詢問使用者同意便可使用。 危險權限需要涉及用戶私人信息、數據或資源的區域，或可能影響用戶存儲的數據，或是其他應用程序的操作。需在Manifest聲明，且需詢問使用者的同意才可使用。 危險權限-權限組所有危險的 Androi">
+  <meta name="description" content="簡介權限的目的是保護Android用戶的隱私。在Android6 sdk23 以上要求使用。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Permission">
 <meta property="og:url" content="https://jinling707.github.io/2020/11/17/Android_Permission/index.html">
 <meta property="og:site_name" content="JIN LING">
-<meta property="og:description" content="簡介權限 的目的是保護Android用戶的隱私。在Android6 sdk23 以上要求使用。 說明普通權限對用戶的隱私或其他應用的操作風險很小。需在Manifest聲明，但不需詢問使用者同意便可使用。 危險權限需要涉及用戶私人信息、數據或資源的區域，或可能影響用戶存儲的數據，或是其他應用程序的操作。需在Manifest聲明，且需詢問使用者的同意才可使用。 危險權限-權限組所有危險的 Androi">
+<meta property="og:description" content="簡介權限的目的是保護Android用戶的隱私。在Android6 sdk23 以上要求使用。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-11-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-17T08:58:33.116Z">
+<meta property="article:modified_time" content="2020-11-17T09:46:00.206Z">
 <meta property="article:author" content="Jin Ling">
 <meta name="twitter:card" content="summary">
 
@@ -314,7 +314,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2020-11-17 00:00:00 / 修改時間：16:58:33" itemprop="dateCreated datePublished" datetime="2020-11-17T00:00:00+08:00">2020-11-17</time>
+      <time title="創建時間：2020-11-17 00:00:00 / 修改時間：17:46:00" itemprop="dateCreated datePublished" datetime="2020-11-17T00:00:00+08:00">2020-11-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -336,7 +336,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>權限 的目的是保護Android用戶的隱私。<br>在Android6 sdk23 以上要求使用。</p>
+        <h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>權限的目的是保護Android用戶的隱私。<br>在Android6 sdk23 以上要求使用。</p>
+<a id="more"></a>
 <h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><h4 id="普通權限"><a href="#普通權限" class="headerlink" title="普通權限"></a>普通權限</h4><p>對用戶的隱私或其他應用的操作風險很小。需在Manifest聲明，但不需詢問使用者同意便可使用。</p>
 <h4 id="危險權限"><a href="#危險權限" class="headerlink" title="危險權限"></a>危險權限</h4><p>需要涉及用戶私人信息、數據或資源的區域，或可能影響用戶存儲的數據，或是其他應用程序的操作。需在Manifest聲明，且需詢問使用者的同意才可使用。</p>
 <h5 id="危險權限-權限組"><a href="#危險權限-權限組" class="headerlink" title="危險權限-權限組"></a>危險權限-權限組</h5><p>所有危險的 Android 系統權限都屬於權限組。<br>向用戶要求權限的對話框不會描述該具體權限，例如，如果應用請求 READ_CONTACTS 權限，系統對話框只說明該應用需要訪問設備的聯繫信息。而在該權限組中，只要有其中一權限被使用者允許，則該權限組的所有權限皆視為允許。</p>

@@ -24,15 +24,15 @@
     var CONFIG = {"hostname":"jinling707.github.io","root":"/","images":"/images","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="簡介可通過API的級別來表示應用程序與Android平台的一個或多個版本的兼容性 說明minSdkVersionApp最小可以支援的版本。(可由Android Studio查詢現有行動裝置的版本比例，藉此確定使用minSdkVersion級別)在Play Store中，用戶的裝置版本若小於APP的minSdkVersion，那Play Store便不向該用戶顯示此App。 在開發時，會依minSd">
+  <meta name="description" content="簡介介紹minSdkVersion、compileSdkVersion、targetSdkVersion可通過API的級別來表示應用程序與Android平台的一個或多個版本的兼容性">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SdkVersion">
 <meta property="og:url" content="https://jinling707.github.io/2020/11/17/Android_SdkVersion/index.html">
 <meta property="og:site_name" content="JIN LING">
-<meta property="og:description" content="簡介可通過API的級別來表示應用程序與Android平台的一個或多個版本的兼容性 說明minSdkVersionApp最小可以支援的版本。(可由Android Studio查詢現有行動裝置的版本比例，藉此確定使用minSdkVersion級別)在Play Store中，用戶的裝置版本若小於APP的minSdkVersion，那Play Store便不向該用戶顯示此App。 在開發時，會依minSd">
+<meta property="og:description" content="簡介介紹minSdkVersion、compileSdkVersion、targetSdkVersion可通過API的級別來表示應用程序與Android平台的一個或多個版本的兼容性">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-11-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-17T08:51:18.746Z">
+<meta property="article:modified_time" content="2020-11-17T09:45:41.812Z">
 <meta property="article:author" content="Jin Ling">
 <meta name="twitter:card" content="summary">
 
@@ -314,7 +314,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2020-11-17 00:00:00 / 修改時間：16:51:18" itemprop="dateCreated datePublished" datetime="2020-11-17T00:00:00+08:00">2020-11-17</time>
+      <time title="創建時間：2020-11-17 00:00:00 / 修改時間：17:45:41" itemprop="dateCreated datePublished" datetime="2020-11-17T00:00:00+08:00">2020-11-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -336,7 +336,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>可通過API的級別來表示應用程序與Android平台的一個或多個版本的兼容性</p>
+        <h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>介紹minSdkVersion、compileSdkVersion、targetSdkVersion<br>可通過API的級別來表示應用程序與Android平台的一個或多個版本的兼容性</p>
+<a id="more"></a>
 <h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><h4 id="minSdkVersion"><a href="#minSdkVersion" class="headerlink" title="minSdkVersion"></a>minSdkVersion</h4><p>App最小可以支援的版本。(可由Android Studio查詢現有行動裝置的版本比例，藉此確定使用minSdkVersion級別)<br>在Play Store中，用戶的裝置版本若小於APP的minSdkVersion，那Play Store便不向該用戶顯示此App。</p>
 <p>在開發時，會依minSdkVersion來警告你，是否用了高於minSdkVersion的API，避免調用不存在的API，造成運行問題。</p>
 <h4 id="compileSdkVersion"><a href="#compileSdkVersion" class="headerlink" title="compileSdkVersion"></a>compileSdkVersion</h4><p>Gradle用的AndroidSDK編譯版本。<br>官方強烈推薦用最新的SDK進行編譯<br>(在開發中的應用程式，提醒已棄用的API，也為使用新的API做好準備)</p>
