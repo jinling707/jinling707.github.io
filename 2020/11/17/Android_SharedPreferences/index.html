@@ -32,7 +32,7 @@
 <meta property="og:description" content="簡介儲存簡單資料例如：帳號資料、遊戲關卡、APP喜愛設定等">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-11-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-17T12:24:16.210Z">
+<meta property="article:modified_time" content="2020-11-18T08:21:44.154Z">
 <meta property="article:author" content="Jin Ling">
 <meta name="twitter:card" content="summary">
 
@@ -211,7 +211,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AA%AA%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">範例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%B5%E5%BB%BA"><span class="nav-number">3.1.</span> <span class="nav-text">創建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%AB%E6%88%90Class"><span class="nav-number">3.2.</span> <span class="nav-text">寫成Class</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AA%AA%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">範例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%B5%E5%BB%BA"><span class="nav-number">3.1.</span> <span class="nav-text">創建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%AB%E5%85%A5%E7%AF%84%E4%BE%8B"><span class="nav-number">3.2.</span> <span class="nav-text">寫入範例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%80%E5%8F%96%E7%AF%84%E4%BE%8B"><span class="nav-number">3.3.</span> <span class="nav-text">讀取範例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%AB%E6%88%90Class"><span class="nav-number">3.4.</span> <span class="nav-text">寫成Class</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -312,10 +312,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
-      
 
-      <time title="創建時間：2020-11-17 00:00:00 / 修改時間：20:24:16" itemprop="dateCreated datePublished" datetime="2020-11-17T00:00:00+08:00">2020-11-17</time>
+      <time title="創建時間：2020-11-17 00:00:00" itemprop="dateCreated datePublished" datetime="2020-11-17T00:00:00+08:00">2020-11-17</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新於</span>
+        <time title="修改時間：2020-11-18 16:21:44" itemprop="dateModified" datetime="2020-11-18T16:21:44+08:00">2020-11-18</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -339,10 +345,49 @@
         <h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>儲存簡單資料<br>例如：帳號資料、遊戲關卡、APP喜愛設定等</p>
 <a id="more"></a>
 
-<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>資料儲存在手機中APP的一個專用目錄下(每個APP都會有一個專用目錄):data/data/[package.name]/shared_prefs<br>EX:data/data/com.example.sharepreferences/shared_prefs</p>
+<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>資料儲存在手機中APP的一個專用目錄下(每個APP都會有一個專用目錄):<br>data/data/[package.name]/shared_prefs/[name.xml]</p>
+<p>EX:data/data/com.example.sharepreferences/shared_prefs/myData.xml</p>
 <p>資料儲存格式為XML檔</p>
 <p>若使用者在設定中清除APP 儲存空間，則SharedPreferences所存的檔案會被清空</p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><h4 id="創建"><a href="#創建" class="headerlink" title="創建"></a>創建</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">SharedPreferences shp = getSharedPreferences(檔案名稱,Context.MODE_PRIVATE);</span><br><span class="line">``` </span><br><span class="line">若沒指定存檔名稱，默認為該Activity的名字</span><br><span class="line">``` java</span><br><span class="line">SharedPreferences shp = getPreferences(Context.MODE_PRIVATE);</span><br><span class="line">``` </span><br><span class="line">|  Value   | Constant             |說明                            |</span><br><span class="line">|  ----    | ----                 |----                            |</span><br><span class="line">| <span class="number">0</span>        | MODE_PRIVATE         |常用，只允許該 APP 存取           |</span><br><span class="line">| <span class="number">1</span>        | MODE_WORLD_READABLE  |不建議，所有 APP 都能讀取         |</span><br><span class="line">| <span class="number">2</span>        | MODE_WORLD_WRITEABLE  |不建議，所有 APP 都能存取、寫入   |</span><br><span class="line">| <span class="number">4</span>        | MODE_MULTI_PROCESS  |允許多個 process 同時存取          |</span><br><span class="line"></span><br><span class="line">#### 寫入範例</span><br><span class="line">``` java</span><br><span class="line">Set&lt;String&gt; set = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">set.add(<span class="string">&quot;秋天&quot;</span>);</span><br><span class="line">set.add(<span class="string">&quot;冬天&quot;</span>);</span><br><span class="line"></span><br><span class="line">SharedPreferences shp = getSharedPreferences(<span class="string">&quot;MyData&quot;</span>,Context.MODE_PRIVATE);</span><br><span class="line">SharedPreferences.Editor editor = shp.edit();</span><br><span class="line"></span><br><span class="line">editor.putInt(<span class="string">&quot;NUMBER&quot;</span>,<span class="number">900</span>);</span><br><span class="line">editor.putString(<span class="string">&quot;USER&quot;</span>, <span class="string">&quot;Boyd&quot;</span>);</span><br><span class="line">editor.putFloat(<span class="string">&quot;WEIGHT&quot;</span>, <span class="number">55</span>);</span><br><span class="line">editor.putStringSet(<span class="string">&quot;SEASON&quot;</span>, set);</span><br><span class="line">editor.apply();</span><br><span class="line">``` </span><br><span class="line">editor.apply()為非同步，可避免衝突 </span><br><span class="line">editor.commit()亦可，不過可能會產生碰撞</span><br><span class="line"></span><br><span class="line">#### 讀取範例</span><br><span class="line">``` java</span><br><span class="line">SharedPreferences shp = getSharedPreferences(<span class="string">&quot;MyData&quot;</span>,Context.MODE_PRIVATE);</span><br><span class="line"></span><br><span class="line">String USER = shp.getString(<span class="string">&quot;USER&quot;</span>,<span class="string">&quot;&quot;</span>);</span><br><span class="line"><span class="keyword">int</span> x = shp.getInt(<span class="string">&quot;NUMBER&quot;</span>,<span class="number">0</span>);</span><br><span class="line">Set&lt;String&gt; set2  = shp.getStringSet(<span class="string">&quot;SEASON&quot;</span>, <span class="keyword">new</span> HashSet&lt;String&gt;());</span><br></pre></td></tr></table></figure>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><h4 id="創建"><a href="#創建" class="headerlink" title="創建"></a>創建</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SharedPreferences shp = getSharedPreferences(檔案名稱,Context.MODE_PRIVATE);</span><br></pre></td></tr></table></figure>
+
+<p>若沒指定存檔名稱，默認為該Activity的名字</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SharedPreferences shp = getPreferences(Context.MODE_PRIVATE);</span><br></pre></td></tr></table></figure>
+
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Constant</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>MODE_PRIVATE</td>
+<td>常用，只允許該 APP 存取</td>
+</tr>
+<tr>
+<td>1</td>
+<td>MODE_WORLD_READABLE</td>
+<td>不建議，所有 APP 都能讀取</td>
+</tr>
+<tr>
+<td>2</td>
+<td>MODE_WORLD_WRITEABLE</td>
+<td>不建議，所有 APP 都能存取、寫入</td>
+</tr>
+<tr>
+<td>4</td>
+<td>MODE_MULTI_PROCESS</td>
+<td>允許多個 process 同時存取</td>
+</tr>
+</tbody></table>
+<h4 id="寫入範例"><a href="#寫入範例" class="headerlink" title="寫入範例"></a>寫入範例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;String&gt; set = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">set.add(<span class="string">&quot;秋天&quot;</span>);</span><br><span class="line">set.add(<span class="string">&quot;冬天&quot;</span>);</span><br><span class="line"></span><br><span class="line">SharedPreferences shp = getSharedPreferences(<span class="string">&quot;MyData&quot;</span>,Context.MODE_PRIVATE);</span><br><span class="line">SharedPreferences.Editor editor = shp.edit();</span><br><span class="line"></span><br><span class="line">editor.putInt(<span class="string">&quot;NUMBER&quot;</span>,<span class="number">900</span>);</span><br><span class="line">editor.putString(<span class="string">&quot;USER&quot;</span>, <span class="string">&quot;Boyd&quot;</span>);</span><br><span class="line">editor.putFloat(<span class="string">&quot;WEIGHT&quot;</span>, <span class="number">55</span>);</span><br><span class="line">editor.putStringSet(<span class="string">&quot;SEASON&quot;</span>, set);</span><br><span class="line">editor.apply();</span><br></pre></td></tr></table></figure>
+
+<p>editor.apply()為非同步，可避免衝突<br>editor.commit()亦可，不過可能會產生碰撞</p>
+<h4 id="讀取範例"><a href="#讀取範例" class="headerlink" title="讀取範例"></a>讀取範例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SharedPreferences shp = getSharedPreferences(<span class="string">&quot;MyData&quot;</span>,Context.MODE_PRIVATE);</span><br><span class="line"></span><br><span class="line">String USER = shp.getString(<span class="string">&quot;USER&quot;</span>,<span class="string">&quot;&quot;</span>);</span><br><span class="line"><span class="keyword">int</span> x = shp.getInt(<span class="string">&quot;NUMBER&quot;</span>,<span class="number">0</span>);</span><br><span class="line">Set&lt;String&gt; set2  = shp.getStringSet(<span class="string">&quot;SEASON&quot;</span>, <span class="keyword">new</span> HashSet&lt;String&gt;());</span><br></pre></td></tr></table></figure>
 
 
 
@@ -369,8 +414,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/11/17/Android_SdkVersion/" rel="next" title="SdkVersion">
-                  SdkVersion <i class="fa fa-chevron-right"></i>
+                <a href="/2020/11/17/Android_Permission/" rel="next" title="Permission">
+                  Permission <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
