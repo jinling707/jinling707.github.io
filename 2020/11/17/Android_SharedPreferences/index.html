@@ -32,7 +32,7 @@
 <meta property="og:description" content="簡介儲存簡單資料例如：帳號資料、遊戲關卡、APP喜愛設定等">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-11-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-18T08:21:44.154Z">
+<meta property="article:modified_time" content="2020-11-30T05:40:48.525Z">
 <meta property="article:author" content="Jin Ling">
 <meta name="twitter:card" content="summary">
 
@@ -227,7 +227,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -320,7 +320,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新於</span>
-        <time title="修改時間：2020-11-18 16:21:44" itemprop="dateModified" datetime="2020-11-18T16:21:44+08:00">2020-11-18</time>
+        <time title="修改時間：2020-11-30 13:40:48" itemprop="dateModified" datetime="2020-11-30T13:40:48+08:00">2020-11-30</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -346,9 +346,9 @@
 <a id="more"></a>
 
 <h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>資料儲存在手機中APP的一個專用目錄下(每個APP都會有一個專用目錄):<br>data/data/[package.name]/shared_prefs/[name.xml]</p>
-<p>EX:data/data/com.example.sharepreferences/shared_prefs/myData.xml</p>
+<p>EX:data/data/com.example.sharepreferences/shared_prefs/myData.xml<br>該檔案可在Android Studio中的Device File Explore中察看</p>
 <p>資料儲存格式為XML檔</p>
-<p>若使用者在設定中清除APP 儲存空間，則SharedPreferences所存的檔案會被清空</p>
+<p>若使用者在設定中清除APP 儲存空間，則SharedPreferences所存的檔案會被清空(為Android本地資料)</p>
 <h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><h4 id="創建"><a href="#創建" class="headerlink" title="創建"></a>創建</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SharedPreferences shp = getSharedPreferences(檔案名稱,Context.MODE_PRIVATE);</span><br></pre></td></tr></table></figure>
 
 <p>若沒指定存檔名稱，默認為該Activity的名字</p>
@@ -414,8 +414,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/11/17/Android_Permission/" rel="next" title="Permission">
-                  Permission <i class="fa fa-chevron-right"></i>
+                <a href="/2020/11/17/Android_SdkVersion/" rel="next" title="SdkVersion">
+                  SdkVersion <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
