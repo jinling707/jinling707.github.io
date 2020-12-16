@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"jinling707.github.io","root":"/","images":"/images","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="簡介Git 常用基本語法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git基本語法">
+<meta property="og:url" content="https://jinling707.github.io/2020/12/02/Git_%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95/index.html">
+<meta property="og:site_name" content="JIN LING">
+<meta property="og:description" content="簡介Git 常用基本語法">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-12-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-03T05:01:19.850Z">
+<meta property="article:author" content="Jin Ling">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://jinling707.github.io/2020/12/02/Git_%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>Git基本語法 | JIN LING</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">JIN LING</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A%E8%B3%87%E6%96%99"><span class="nav-number">1.0.1.</span> <span class="nav-text">設定資料</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%9F%BA%E6%9C%AC%E8%B3%87%E6%96%99"><span class="nav-number">1.0.2.</span> <span class="nav-text">查看基本資料</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%8B%E8%BC%89%E6%AA%94%E6%A1%88"><span class="nav-number">1.0.3.</span> <span class="nav-text">下載檔案</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8BGit%E5%BA%AB"><span class="nav-number">1.0.4.</span> <span class="nav-text">建立Git庫</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6"><span class="nav-number">1.0.5.</span> <span class="nav-text">添加文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E9%81%A0%E7%AB%AF%E5%84%B2%E5%AD%98%E5%BA%AB"><span class="nav-number">1.0.6.</span> <span class="nav-text">建立遠端儲存庫</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E9%81%A0%E7%AB%AF%E7%B6%B2%E5%9D%80"><span class="nav-number">1.0.7.</span> <span class="nav-text">查看遠端網址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Git%E7%8B%80%E6%85%8B"><span class="nav-number">1.0.8.</span> <span class="nav-text">Git狀態</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8A%8A%E8%B3%87%E6%96%99%E6%94%BE%E5%88%B0%E7%B4%A2%E5%BC%95%E5%8D%80"><span class="nav-number">1.0.9.</span> <span class="nav-text">把資料放到索引區</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4"><span class="nav-number">1.0.10.</span> <span class="nav-text">提交</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E6%AD%B7%E5%8F%B2"><span class="nav-number">1.0.11.</span> <span class="nav-text">查看提交歷史</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E8%AE%8A%E5%8B%95"><span class="nav-number">1.0.12.</span> <span class="nav-text">查看變動</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E5%88%86%E6%94%AF"><span class="nav-number">1.0.13.</span> <span class="nav-text">新增分支</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%87%E6%8F%9B%E5%88%86%E6%94%AF"><span class="nav-number">1.0.14.</span> <span class="nav-text">切換分支</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AA%A2%E8%A6%96%E6%89%80%E6%9C%89%E5%88%86%E6%94%AF%E5%8C%85%E6%8B%AC%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E5%92%8C%E9%81%A0%E7%AB%AF%E5%88%86%E6%94%AF"><span class="nav-number">1.0.15.</span> <span class="nav-text">檢視所有分支包括本地分支和遠端分支</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B0%E5%A2%9EBranchName%E5%88%86%E6%94%AF%EF%BC%8C%E4%B8%A6%E5%88%87%E6%8F%9B%E5%88%B0%E8%A9%B2%E5%88%86%E4%B9%8B%E4%B8%8A"><span class="nav-number">1.0.16.</span> <span class="nav-text">新增BranchName分支，並切換到該分之上</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%AA%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF-%E4%B8%8D%E8%83%BD%E5%9C%A8%E8%A9%B2%E5%88%86%E4%B9%8B%E4%B8%8A%E9%80%B2%E8%A1%8C%E5%88%AA%E9%99%A4"><span class="nav-number">1.0.17.</span> <span class="nav-text">刪除本地分支(不能在該分之上進行刪除)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%A0%B9%E6%93%9A-commit-id-%E5%9B%9E%E8%A6%86%E5%88%B0%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC"><span class="nav-number">1.0.18.</span> <span class="nav-text">根據 commit id 回覆到指定版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%88%E4%BD%B5%E5%88%86%E6%94%AF-PR-Pull-Reruest-Merge"><span class="nav-number">1.0.19.</span> <span class="nav-text">合併分支(PR&#x3D;Pull Reruest &#x3D;Merge)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E5%90%88%E4%BD%B5"><span class="nav-number">1.0.20.</span> <span class="nav-text">取消合併</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B0%87%E6%96%B0%E5%88%86%E6%94%AF%E6%8E%A8%E9%80%81%E8%87%B3GitHub-%E5%8F%AF%E7%94%A8%E6%96%BC%E6%8E%A8%E9%80%81%E4%B8%BB%E5%88%86%E6%94%AF%E3%80%81%E5%88%86%E6%94%AF%E7%9A%84Commit"><span class="nav-number">1.0.21.</span> <span class="nav-text">將新分支推送至GitHub(可用於推送主分支、分支的Commit)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%B7%E5%88%B6%E6%8E%A8%E9%80%81%E6%9C%AC%E5%9C%B0%E5%88%86%E4%B9%8B%E7%8B%80%E6%85%8B%E5%88%B0%E9%81%A0%E7%AB%AF-%E9%80%9A%E5%B8%B8%E7%94%A8%E6%96%BC%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E8%88%87%E9%81%A0%E7%A8%8B%E5%88%86%E6%94%AF%E4%B8%8D%E5%90%8C%E6%99%82"><span class="nav-number">1.0.22.</span> <span class="nav-text">強制推送本地分之狀態到遠端_通常用於本地分支與遠程分支不同時</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E9%9B%B2%E7%AB%AF%E8%B3%87%E6%96%99-%E6%8B%89%E4%B8%8B%E9%9B%B2%E7%AB%AF%E5%85%A7%E5%AE%B9"><span class="nav-number">1.0.23.</span> <span class="nav-text">同步雲端資料(拉下雲端內容)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AA%A2%E8%A6%96%E9%81%A0%E7%AB%AF%E5%88%86%E6%94%AF"><span class="nav-number">1.0.24.</span> <span class="nav-text">檢視遠端分支</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%AA%E9%99%A4%E9%9B%B2%E7%AB%AF%E5%88%86%E6%94%AF-%E8%A1%A8%E7%A4%BA%E5%88%AA%E9%99%A4%E5%88%86%E6%94%AF"><span class="nav-number">1.0.25.</span> <span class="nav-text">刪除雲端分支(:表示刪除分支)</span></a></li></ol></li></ol></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jin Ling"
+      src="/images/avatar0.jpg">
+  <p class="site-author-name" itemprop="name">Jin Ling</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jinling707" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jinling707" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:jinling707@gmail.com" title="E-Mail → mailto:jinling707@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://jinling707.github.io/2020/12/02/Git_%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar0.jpg">
+      <meta itemprop="name" content="Jin Ling">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JIN LING">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git基本語法
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2020-12-02 00:00:00" itemprop="dateCreated datePublished" datetime="2020-12-02T00:00:00+08:00">2020-12-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新於</span>
+        <time title="修改時間：2020-12-03 13:01:19" itemprop="dateModified" datetime="2020-12-03T13:01:19+08:00">2020-12-03</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>Git 常用基本語法</p>
+<a id="more"></a>
+<h5 id="設定資料"><a href="#設定資料" class="headerlink" title="設定資料"></a>設定資料</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &#39;jinling707&#39;</span><br><span class="line">git config --global user.email &#39;jinling707@gmail.com&#39;</span><br></pre></td></tr></table></figure>
+<h5 id="查看基本資料"><a href="#查看基本資料" class="headerlink" title="查看基本資料"></a>查看基本資料</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config -l</span><br></pre></td></tr></table></figure>
+<h5 id="下載檔案"><a href="#下載檔案" class="headerlink" title="下載檔案"></a>下載檔案</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;jinling707&#x2F;AndroidSQLiteExample.git</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="建立Git庫"><a href="#建立Git庫" class="headerlink" title="建立Git庫"></a>建立Git庫</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<h5 id="添加文件"><a href="#添加文件" class="headerlink" title="添加文件"></a>添加文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add README.md</span><br></pre></td></tr></table></figure>
+<h5 id="建立遠端儲存庫"><a href="#建立遠端儲存庫" class="headerlink" title="建立遠端儲存庫"></a>建立遠端儲存庫</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https:&#x2F;&#x2F;github.com&#x2F;jinling707&#x2F;AndroidSQLiteExample.git</span><br></pre></td></tr></table></figure>
+<h5 id="查看遠端網址"><a href="#查看遠端網址" class="headerlink" title="查看遠端網址"></a>查看遠端網址</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote –v</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="Git狀態"><a href="#Git狀態" class="headerlink" title="Git狀態"></a>Git狀態</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+<h5 id="把資料放到索引區"><a href="#把資料放到索引區" class="headerlink" title="把資料放到索引區"></a>把資料放到索引區</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git add P1.text</span><br></pre></td></tr></table></figure>
+<h5 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit –m &quot;Commit Remark&quot;</span><br></pre></td></tr></table></figure>
+<p>要修改最後一次的 Commit 訊息，只需直接在 Commit 指令後面加上 –amend 即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend -m &quot;revise Commit&quot;</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看提交歷史"><a href="#查看提交歷史" class="headerlink" title="查看提交歷史"></a>查看提交歷史</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git log -4</span><br><span class="line">git log --one line</span><br><span class="line">git log --one line -4</span><br><span class="line">git log --graph --oneline</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看變動"><a href="#查看變動" class="headerlink" title="查看變動"></a>查看變動</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="新增分支"><a href="#新增分支" class="headerlink" title="新增分支"></a>新增分支</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch BranchName</span><br></pre></td></tr></table></figure>
+<h5 id="切換分支"><a href="#切換分支" class="headerlink" title="切換分支"></a>切換分支</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout BranchName</span><br></pre></td></tr></table></figure>
+<h5 id="檢視所有分支包括本地分支和遠端分支"><a href="#檢視所有分支包括本地分支和遠端分支" class="headerlink" title="檢視所有分支包括本地分支和遠端分支"></a>檢視所有分支包括本地分支和遠端分支</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
+<h5 id="新增BranchName分支，並切換到該分之上"><a href="#新增BranchName分支，並切換到該分之上" class="headerlink" title="新增BranchName分支，並切換到該分之上"></a>新增BranchName分支，並切換到該分之上</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b BranchName</span><br></pre></td></tr></table></figure>
+<h5 id="刪除本地分支-不能在該分之上進行刪除"><a href="#刪除本地分支-不能在該分之上進行刪除" class="headerlink" title="刪除本地分支(不能在該分之上進行刪除)"></a>刪除本地分支(不能在該分之上進行刪除)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d BranchName</span><br></pre></td></tr></table></figure>
+<h5 id="根據-commit-id-回覆到指定版本"><a href="#根據-commit-id-回覆到指定版本" class="headerlink" title="根據 commit id 回覆到指定版本"></a>根據 commit id 回覆到指定版本</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard commit_id </span><br></pre></td></tr></table></figure>
+<h5 id="合併分支-PR-Pull-Reruest-Merge"><a href="#合併分支-PR-Pull-Reruest-Merge" class="headerlink" title="合併分支(PR=Pull Reruest =Merge)"></a>合併分支(PR=Pull Reruest =Merge)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge BranchName</span><br></pre></td></tr></table></figure>
+<h5 id="取消合併"><a href="#取消合併" class="headerlink" title="取消合併"></a>取消合併</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge --abort</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="將新分支推送至GitHub-可用於推送主分支、分支的Commit"><a href="#將新分支推送至GitHub-可用於推送主分支、分支的Commit" class="headerlink" title="將新分支推送至GitHub(可用於推送主分支、分支的Commit)"></a>將新分支推送至GitHub(可用於推送主分支、分支的Commit)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin BranchName</span><br></pre></td></tr></table></figure>
+<h5 id="強制推送本地分之狀態到遠端-通常用於本地分支與遠程分支不同時"><a href="#強制推送本地分之狀態到遠端-通常用於本地分支與遠程分支不同時" class="headerlink" title="強制推送本地分之狀態到遠端_通常用於本地分支與遠程分支不同時"></a>強制推送本地分之狀態到遠端_通常用於本地分支與遠程分支不同時</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f origin BranchName</span><br></pre></td></tr></table></figure>
+<h5 id="同步雲端資料-拉下雲端內容"><a href="#同步雲端資料-拉下雲端內容" class="headerlink" title="同步雲端資料(拉下雲端內容)"></a>同步雲端資料(拉下雲端內容)</h5><p>git pull是git fetch和git merge兩個步驟的結合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin BranchName</span><br></pre></td></tr></table></figure>
+
+<h5 id="檢視遠端分支"><a href="#檢視遠端分支" class="headerlink" title="檢視遠端分支"></a>檢視遠端分支</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -r</span><br></pre></td></tr></table></figure>
+<h5 id="刪除雲端分支-表示刪除分支"><a href="#刪除雲端分支-表示刪除分支" class="headerlink" title="刪除雲端分支(:表示刪除分支)"></a>刪除雲端分支(:表示刪除分支)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin :BranchName</span><br></pre></td></tr></table></figure>
+
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/11/30/Android_MVVM%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" rel="prev" title="Android_MVVM基本使用">
+                  <i class="fa fa-chevron-left"></i> Android_MVVM基本使用
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jin Ling</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
