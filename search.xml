@@ -94,27 +94,6 @@
       </categories>
   </entry>
   <entry>
-    <title>SdkVersion</title>
-    <url>/2020/11/17/Android_SdkVersion/</url>
-    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>介紹minSdkVersion、compileSdkVersion、targetSdkVersion<br>可通過API的級別來表示應用程序與Android平台的一個或多個版本的兼容性</p>
-<a id="more"></a>
-<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><h4 id="minSdkVersion"><a href="#minSdkVersion" class="headerlink" title="minSdkVersion"></a>minSdkVersion</h4><p>App最小可以支援的版本。(可由Android Studio查詢現有行動裝置的版本比例，藉此確定使用minSdkVersion級別)<br>在Play Store中，用戶的裝置版本若小於APP的minSdkVersion，那Play Store便不向該用戶顯示此App。</p>
-<p>在開發時，會依minSdkVersion來警告你，是否用了高於minSdkVersion的API，避免調用不存在的API，造成運行問題。</p>
-<h4 id="compileSdkVersion"><a href="#compileSdkVersion" class="headerlink" title="compileSdkVersion"></a>compileSdkVersion</h4><p>Gradle用的AndroidSDK編譯版本。<br>官方強烈推薦用最新的SDK進行編譯<br>(在開發中的應用程式，提醒已棄用的API，也為使用新的API做好準備)</p>
-<h4 id="targetSdkVersion"><a href="#targetSdkVersion" class="headerlink" title="targetSdkVersion"></a>targetSdkVersion</h4><p>App最合適的版本，最低通常須依Googlee規定<br>也是向前兼容的主要依據:如果裝置API級別高於您的應用程序聲明的targetSdkVersion，則係統可能會啟用兼容性行為，以確保您的應用程序繼續按您期望的方式運行。<br>舉例:<br>在Android 6.0（API 级别23）及更高版本中，使用一些相對敏感的權限時，需要徵求用戶的許可。<br>若target sdk &lt; 23 ，Android 則會自動用 23 以下的 api 運行，而若是APP運行在android 6.0或以上版本，且target sdk&gt;=23，便需要向其徵求敏感權限的使用。</p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><h4 id="設定位置"><a href="#設定位置" class="headerlink" title="設定位置"></a>設定位置</h4><p>build.gradle</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">30</span></span><br><span class="line">    buildToolsVersion <span class="string">&quot;30.0.1&quot;</span></span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId <span class="string">&quot;com.xxx.xxx&quot;</span></span><br><span class="line">        minSdkVersion <span class="number">18</span></span><br><span class="line">        targetSdkVersion <span class="number">26</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">&quot;1.0&quot;</span></span><br><span class="line"></span><br><span class="line">        testInstrumentationRunner <span class="string">&quot;androidx.test.runner.AndroidJUnitRunner&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="版本判斷及應變"><a href="#版本判斷及應變" class="headerlink" title="版本判斷及應變"></a>版本判斷及應變</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.HONEYCOMB) </span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p>官方文檔 <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element">https://developer.android.com/guide/topics/manifest/uses-sdk-element</a><br><a href="https://willy2016.pixnet.net/blog/post/215759103">https://willy2016.pixnet.net/blog/post/215759103</a></p>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-  </entry>
-  <entry>
     <title>SharedPreferences</title>
     <url>/2020/11/17/Android_SharedPreferences/</url>
     <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>儲存簡單資料<br>例如：帳號資料、遊戲關卡、APP喜愛設定等</p>
@@ -178,6 +157,27 @@
       <tags>
         <tag>Android檔案資料存取</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>SdkVersion</title>
+    <url>/2020/11/17/Android_SdkVersion/</url>
+    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>介紹minSdkVersion、compileSdkVersion、targetSdkVersion<br>可通過API的級別來表示應用程序與Android平台的一個或多個版本的兼容性</p>
+<a id="more"></a>
+<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><h4 id="minSdkVersion"><a href="#minSdkVersion" class="headerlink" title="minSdkVersion"></a>minSdkVersion</h4><p>App最小可以支援的版本。(可由Android Studio查詢現有行動裝置的版本比例，藉此確定使用minSdkVersion級別)<br>在Play Store中，用戶的裝置版本若小於APP的minSdkVersion，那Play Store便不向該用戶顯示此App。</p>
+<p>在開發時，會依minSdkVersion來警告你，是否用了高於minSdkVersion的API，避免調用不存在的API，造成運行問題。</p>
+<h4 id="compileSdkVersion"><a href="#compileSdkVersion" class="headerlink" title="compileSdkVersion"></a>compileSdkVersion</h4><p>Gradle用的AndroidSDK編譯版本。<br>官方強烈推薦用最新的SDK進行編譯<br>(在開發中的應用程式，提醒已棄用的API，也為使用新的API做好準備)</p>
+<h4 id="targetSdkVersion"><a href="#targetSdkVersion" class="headerlink" title="targetSdkVersion"></a>targetSdkVersion</h4><p>App最合適的版本，最低通常須依Googlee規定<br>也是向前兼容的主要依據:如果裝置API級別高於您的應用程序聲明的targetSdkVersion，則係統可能會啟用兼容性行為，以確保您的應用程序繼續按您期望的方式運行。<br>舉例:<br>在Android 6.0（API 级别23）及更高版本中，使用一些相對敏感的權限時，需要徵求用戶的許可。<br>若target sdk &lt; 23 ，Android 則會自動用 23 以下的 api 運行，而若是APP運行在android 6.0或以上版本，且target sdk&gt;=23，便需要向其徵求敏感權限的使用。</p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><h4 id="設定位置"><a href="#設定位置" class="headerlink" title="設定位置"></a>設定位置</h4><p>build.gradle</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">30</span></span><br><span class="line">    buildToolsVersion <span class="string">&quot;30.0.1&quot;</span></span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId <span class="string">&quot;com.xxx.xxx&quot;</span></span><br><span class="line">        minSdkVersion <span class="number">18</span></span><br><span class="line">        targetSdkVersion <span class="number">26</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">&quot;1.0&quot;</span></span><br><span class="line"></span><br><span class="line">        testInstrumentationRunner <span class="string">&quot;androidx.test.runner.AndroidJUnitRunner&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="版本判斷及應變"><a href="#版本判斷及應變" class="headerlink" title="版本判斷及應變"></a>版本判斷及應變</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.HONEYCOMB) </span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p>官方文檔 <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element">https://developer.android.com/guide/topics/manifest/uses-sdk-element</a><br><a href="https://willy2016.pixnet.net/blog/post/215759103">https://willy2016.pixnet.net/blog/post/215759103</a></p>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
   </entry>
   <entry>
     <title>檔案存取-FileInputStream/FileOutputStream.</title>
@@ -248,6 +248,27 @@
       </tags>
   </entry>
   <entry>
+    <title>自訂字體</title>
+    <url>/2021/01/07/Android_%E8%87%AA%E8%A8%82%E5%AD%97%E9%AB%94/</url>
+    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>自訂Android系統中的字體</p>
+<a id="more"></a>
+
+<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>自行從網路上下載文字檔案(OpenType 與 TrueType 皆可)。</p>
+<p>另外可選用SIL開源字型授權的字體(SIL Open Font License 1.1)<br>該授權可<br>1 商用，不需付費、知會或標明作者。<br>2 分享檔案、將檔案安裝於任何軟硬體中。<br>3 自由修改。</p>
+<h3 id="在Android中使用字體"><a href="#在Android中使用字體" class="headerlink" title="在Android中使用字體"></a>在Android中使用字體</h3><p>將(.ttf/.otf)檔案放進專案(檔案位置app/src/main/assets/fonts)</p>
+<p>–&gt;在app夾按右鍵<br>–&gt;New<br>–&gt;Folder<br>–&gt;Assets Folder</p>
+<p>在assets創一fonts資料夾將檔案放進專案</p>
+<h3 id="使用範例"><a href="#使用範例" class="headerlink" title="使用範例"></a>使用範例</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Typeface custom_font = Typeface.createFromAsset(getAssets(), <span class="string">&quot;fonts/NaikaiFont-Regular.ttf&quot;</span>);</span><br><span class="line"></span><br><span class="line">textView.setTypeface(custom_font);</span><br><span class="line"></span><br><span class="line">editText.setTypeface(custom_font);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p><a href="http://tw.gitbook.net/android/android_custom_fonts.html">http://tw.gitbook.net/android/android_custom_fonts.html</a></p>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Git基本語法</title>
     <url>/2020/12/02/Git_%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95/</url>
     <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>Git 常用基本語法</p>
@@ -294,32 +315,6 @@
       <categories>
         <category>Git</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Hello World2000 哈囉</title>
-    <url>/2018/04/11/hello-world2/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>程式</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>前端</tag>
-      </tags>
   </entry>
   <entry>
     <title>RGB透明顏色值</title>
@@ -425,6 +420,32 @@
       <categories>
         <category>美編</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Hello World2000 哈囉</title>
+    <url>/2018/04/11/hello-world2/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>程式</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>前端</tag>
+      </tags>
   </entry>
   <entry>
     <title>SQLite</title>
