@@ -269,6 +269,54 @@
       </categories>
   </entry>
   <entry>
+    <title>Git基本語法</title>
+    <url>/2020/12/02/Git_%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95/</url>
+    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>Git 常用基本語法</p>
+<a id="more"></a>
+<h5 id="設定資料"><a href="#設定資料" class="headerlink" title="設定資料"></a>設定資料</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &#39;jinling707&#39;</span><br><span class="line">git config --global user.email &#39;jinling707@gmail.com&#39;</span><br></pre></td></tr></table></figure>
+<h5 id="查看基本資料"><a href="#查看基本資料" class="headerlink" title="查看基本資料"></a>查看基本資料</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config -l</span><br></pre></td></tr></table></figure>
+<h5 id="下載檔案"><a href="#下載檔案" class="headerlink" title="下載檔案"></a>下載檔案</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;jinling707&#x2F;AndroidSQLiteExample.git</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="建立Git庫"><a href="#建立Git庫" class="headerlink" title="建立Git庫"></a>建立Git庫</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<h5 id="添加文件"><a href="#添加文件" class="headerlink" title="添加文件"></a>添加文件</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add README.md</span><br></pre></td></tr></table></figure>
+<h5 id="建立遠端儲存庫"><a href="#建立遠端儲存庫" class="headerlink" title="建立遠端儲存庫"></a>建立遠端儲存庫</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add origin https:&#x2F;&#x2F;github.com&#x2F;jinling707&#x2F;AndroidSQLiteExample.git</span><br></pre></td></tr></table></figure>
+<h5 id="查看遠端網址"><a href="#查看遠端網址" class="headerlink" title="查看遠端網址"></a>查看遠端網址</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote –v</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="Git狀態"><a href="#Git狀態" class="headerlink" title="Git狀態"></a>Git狀態</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+<h5 id="把資料放到索引區"><a href="#把資料放到索引區" class="headerlink" title="把資料放到索引區"></a>把資料放到索引區</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git add P1.text</span><br></pre></td></tr></table></figure>
+<h5 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git commit –m &quot;Commit Remark&quot;</span><br></pre></td></tr></table></figure>
+<p>要修改最後一次的 Commit 訊息，只需直接在 Commit 指令後面加上 –amend 即可</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git commit --amend -m &quot;revise Commit&quot;</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看提交歷史"><a href="#查看提交歷史" class="headerlink" title="查看提交歷史"></a>查看提交歷史</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git log</span><br><span class="line">git log -4</span><br><span class="line">git log --one line</span><br><span class="line">git log --one line -4</span><br><span class="line">git log --graph --oneline</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看變動"><a href="#查看變動" class="headerlink" title="查看變動"></a>查看變動</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git diff</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="新增分支"><a href="#新增分支" class="headerlink" title="新增分支"></a>新增分支</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch BranchName</span><br></pre></td></tr></table></figure>
+<h5 id="切換分支"><a href="#切換分支" class="headerlink" title="切換分支"></a>切換分支</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git checkout BranchName</span><br></pre></td></tr></table></figure>
+<h5 id="檢視所有分支包括本地分支和遠端分支"><a href="#檢視所有分支包括本地分支和遠端分支" class="headerlink" title="檢視所有分支包括本地分支和遠端分支"></a>檢視所有分支包括本地分支和遠端分支</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
+<h5 id="新增BranchName分支，並切換到該分之上"><a href="#新增BranchName分支，並切換到該分之上" class="headerlink" title="新增BranchName分支，並切換到該分之上"></a>新增BranchName分支，並切換到該分之上</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git checkout -b BranchName</span><br></pre></td></tr></table></figure>
+<h5 id="刪除本地分支-不能在該分之上進行刪除"><a href="#刪除本地分支-不能在該分之上進行刪除" class="headerlink" title="刪除本地分支(不能在該分之上進行刪除)"></a>刪除本地分支(不能在該分之上進行刪除)</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch -d BranchName</span><br></pre></td></tr></table></figure>
+<h5 id="根據-commit-id-回覆到指定版本"><a href="#根據-commit-id-回覆到指定版本" class="headerlink" title="根據 commit id 回覆到指定版本"></a>根據 commit id 回覆到指定版本</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard commit_id </span><br></pre></td></tr></table></figure>
+<h5 id="合併分支-PR-Pull-Reruest-Merge"><a href="#合併分支-PR-Pull-Reruest-Merge" class="headerlink" title="合併分支(PR=Pull Reruest =Merge)"></a>合併分支(PR=Pull Reruest =Merge)</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git merge BranchName</span><br></pre></td></tr></table></figure>
+<h5 id="取消合併"><a href="#取消合併" class="headerlink" title="取消合併"></a>取消合併</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git merge --abort</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="將新分支推送至GitHub-可用於推送主分支、分支的Commit"><a href="#將新分支推送至GitHub-可用於推送主分支、分支的Commit" class="headerlink" title="將新分支推送至GitHub(可用於推送主分支、分支的Commit)"></a>將新分支推送至GitHub(可用於推送主分支、分支的Commit)</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push origin BranchName</span><br></pre></td></tr></table></figure>
+<h5 id="強制推送本地分之狀態到遠端-通常用於本地分支與遠程分支不同時"><a href="#強制推送本地分之狀態到遠端-通常用於本地分支與遠程分支不同時" class="headerlink" title="強制推送本地分之狀態到遠端_通常用於本地分支與遠程分支不同時"></a>強制推送本地分之狀態到遠端_通常用於本地分支與遠程分支不同時</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push -f origin BranchName</span><br></pre></td></tr></table></figure>
+<h5 id="同步雲端資料-拉下雲端內容"><a href="#同步雲端資料-拉下雲端內容" class="headerlink" title="同步雲端資料(拉下雲端內容)"></a>同步雲端資料(拉下雲端內容)</h5><p>git pull是git fetch和git merge兩個步驟的結合</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git pull origin BranchName</span><br></pre></td></tr></table></figure>
+
+<h5 id="檢視遠端分支"><a href="#檢視遠端分支" class="headerlink" title="檢視遠端分支"></a>檢視遠端分支</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch -r</span><br></pre></td></tr></table></figure>
+<h5 id="刪除雲端分支-表示刪除分支"><a href="#刪除雲端分支-表示刪除分支" class="headerlink" title="刪除雲端分支(:表示刪除分支)"></a>刪除雲端分支(:表示刪除分支)</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push origin :BranchName</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
     <title>RGB透明顏色值</title>
     <url>/2020/12/28/RGB%E9%80%8F%E6%98%8E%E9%A1%8F%E8%89%B2%E5%80%BC/</url>
     <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>RGB 與 透明度表示</p>
@@ -371,54 +419,6 @@
 ]]></content>
       <categories>
         <category>美編</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Git基本語法</title>
-    <url>/2020/12/02/Git_%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95/</url>
-    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>Git 常用基本語法</p>
-<a id="more"></a>
-<h5 id="設定資料"><a href="#設定資料" class="headerlink" title="設定資料"></a>設定資料</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &#39;jinling707&#39;</span><br><span class="line">git config --global user.email &#39;jinling707@gmail.com&#39;</span><br></pre></td></tr></table></figure>
-<h5 id="查看基本資料"><a href="#查看基本資料" class="headerlink" title="查看基本資料"></a>查看基本資料</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config -l</span><br></pre></td></tr></table></figure>
-<h5 id="下載檔案"><a href="#下載檔案" class="headerlink" title="下載檔案"></a>下載檔案</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;jinling707&#x2F;AndroidSQLiteExample.git</span><br></pre></td></tr></table></figure>
-<hr>
-<h5 id="建立Git庫"><a href="#建立Git庫" class="headerlink" title="建立Git庫"></a>建立Git庫</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-<h5 id="添加文件"><a href="#添加文件" class="headerlink" title="添加文件"></a>添加文件</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add README.md</span><br></pre></td></tr></table></figure>
-<h5 id="建立遠端儲存庫"><a href="#建立遠端儲存庫" class="headerlink" title="建立遠端儲存庫"></a>建立遠端儲存庫</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add origin https:&#x2F;&#x2F;github.com&#x2F;jinling707&#x2F;AndroidSQLiteExample.git</span><br></pre></td></tr></table></figure>
-<h5 id="查看遠端網址"><a href="#查看遠端網址" class="headerlink" title="查看遠端網址"></a>查看遠端網址</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote –v</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h5 id="Git狀態"><a href="#Git狀態" class="headerlink" title="Git狀態"></a>Git狀態</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-<h5 id="把資料放到索引區"><a href="#把資料放到索引區" class="headerlink" title="把資料放到索引區"></a>把資料放到索引區</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git add P1.text</span><br></pre></td></tr></table></figure>
-<h5 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git commit –m &quot;Commit Remark&quot;</span><br></pre></td></tr></table></figure>
-<p>要修改最後一次的 Commit 訊息，只需直接在 Commit 指令後面加上 –amend 即可</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git commit --amend -m &quot;revise Commit&quot;</span><br></pre></td></tr></table></figure>
-
-<h5 id="查看提交歷史"><a href="#查看提交歷史" class="headerlink" title="查看提交歷史"></a>查看提交歷史</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git log</span><br><span class="line">git log -4</span><br><span class="line">git log --one line</span><br><span class="line">git log --one line -4</span><br><span class="line">git log --graph --oneline</span><br></pre></td></tr></table></figure>
-
-<h5 id="查看變動"><a href="#查看變動" class="headerlink" title="查看變動"></a>查看變動</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git diff</span><br></pre></td></tr></table></figure>
-<hr>
-<h5 id="新增分支"><a href="#新增分支" class="headerlink" title="新增分支"></a>新增分支</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch BranchName</span><br></pre></td></tr></table></figure>
-<h5 id="切換分支"><a href="#切換分支" class="headerlink" title="切換分支"></a>切換分支</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git checkout BranchName</span><br></pre></td></tr></table></figure>
-<h5 id="檢視所有分支包括本地分支和遠端分支"><a href="#檢視所有分支包括本地分支和遠端分支" class="headerlink" title="檢視所有分支包括本地分支和遠端分支"></a>檢視所有分支包括本地分支和遠端分支</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
-<h5 id="新增BranchName分支，並切換到該分之上"><a href="#新增BranchName分支，並切換到該分之上" class="headerlink" title="新增BranchName分支，並切換到該分之上"></a>新增BranchName分支，並切換到該分之上</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git checkout -b BranchName</span><br></pre></td></tr></table></figure>
-<h5 id="刪除本地分支-不能在該分之上進行刪除"><a href="#刪除本地分支-不能在該分之上進行刪除" class="headerlink" title="刪除本地分支(不能在該分之上進行刪除)"></a>刪除本地分支(不能在該分之上進行刪除)</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch -d BranchName</span><br></pre></td></tr></table></figure>
-<h5 id="根據-commit-id-回覆到指定版本"><a href="#根據-commit-id-回覆到指定版本" class="headerlink" title="根據 commit id 回覆到指定版本"></a>根據 commit id 回覆到指定版本</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git reset --hard commit_id </span><br></pre></td></tr></table></figure>
-<h5 id="合併分支-PR-Pull-Reruest-Merge"><a href="#合併分支-PR-Pull-Reruest-Merge" class="headerlink" title="合併分支(PR=Pull Reruest =Merge)"></a>合併分支(PR=Pull Reruest =Merge)</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git merge BranchName</span><br></pre></td></tr></table></figure>
-<h5 id="取消合併"><a href="#取消合併" class="headerlink" title="取消合併"></a>取消合併</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git merge --abort</span><br></pre></td></tr></table></figure>
-<hr>
-<h5 id="將新分支推送至GitHub-可用於推送主分支、分支的Commit"><a href="#將新分支推送至GitHub-可用於推送主分支、分支的Commit" class="headerlink" title="將新分支推送至GitHub(可用於推送主分支、分支的Commit)"></a>將新分支推送至GitHub(可用於推送主分支、分支的Commit)</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push origin BranchName</span><br></pre></td></tr></table></figure>
-<h5 id="強制推送本地分之狀態到遠端-通常用於本地分支與遠程分支不同時"><a href="#強制推送本地分之狀態到遠端-通常用於本地分支與遠程分支不同時" class="headerlink" title="強制推送本地分之狀態到遠端_通常用於本地分支與遠程分支不同時"></a>強制推送本地分之狀態到遠端_通常用於本地分支與遠程分支不同時</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push -f origin BranchName</span><br></pre></td></tr></table></figure>
-<h5 id="同步雲端資料-拉下雲端內容"><a href="#同步雲端資料-拉下雲端內容" class="headerlink" title="同步雲端資料(拉下雲端內容)"></a>同步雲端資料(拉下雲端內容)</h5><p>git pull是git fetch和git merge兩個步驟的結合</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git pull origin BranchName</span><br></pre></td></tr></table></figure>
-
-<h5 id="檢視遠端分支"><a href="#檢視遠端分支" class="headerlink" title="檢視遠端分支"></a>檢視遠端分支</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch -r</span><br></pre></td></tr></table></figure>
-<h5 id="刪除雲端分支-表示刪除分支"><a href="#刪除雲端分支-表示刪除分支" class="headerlink" title="刪除雲端分支(:表示刪除分支)"></a>刪除雲端分支(:表示刪除分支)</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push origin :BranchName</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>Git</category>
       </categories>
   </entry>
   <entry>
