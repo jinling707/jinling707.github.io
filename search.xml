@@ -94,6 +94,27 @@
       </categories>
   </entry>
   <entry>
+    <title>SdkVersion</title>
+    <url>/2020/11/17/Android_SdkVersion/</url>
+    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>介紹minSdkVersion、compileSdkVersion、targetSdkVersion<br>可通過API的級別來表示應用程序與Android平台的一個或多個版本的兼容性</p>
+<a id="more"></a>
+<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><h4 id="minSdkVersion"><a href="#minSdkVersion" class="headerlink" title="minSdkVersion"></a>minSdkVersion</h4><p>App最小可以支援的版本。(可由Android Studio查詢現有行動裝置的版本比例，藉此確定使用minSdkVersion級別)<br>在Play Store中，用戶的裝置版本若小於APP的minSdkVersion，那Play Store便不向該用戶顯示此App。</p>
+<p>在開發時，會依minSdkVersion來警告你，是否用了高於minSdkVersion的API，避免調用不存在的API，造成運行問題。</p>
+<h4 id="compileSdkVersion"><a href="#compileSdkVersion" class="headerlink" title="compileSdkVersion"></a>compileSdkVersion</h4><p>Gradle用的AndroidSDK編譯版本。<br>官方強烈推薦用最新的SDK進行編譯<br>(在開發中的應用程式，提醒已棄用的API，也為使用新的API做好準備)</p>
+<h4 id="targetSdkVersion"><a href="#targetSdkVersion" class="headerlink" title="targetSdkVersion"></a>targetSdkVersion</h4><p>App最合適的版本，最低通常須依Googlee規定<br>也是向前兼容的主要依據:如果裝置API級別高於您的應用程序聲明的targetSdkVersion，則係統可能會啟用兼容性行為，以確保您的應用程序繼續按您期望的方式運行。<br>舉例:<br>在Android 6.0（API 级别23）及更高版本中，使用一些相對敏感的權限時，需要徵求用戶的許可。<br>若target sdk &lt; 23 ，Android 則會自動用 23 以下的 api 運行，而若是APP運行在android 6.0或以上版本，且target sdk&gt;=23，便需要向其徵求敏感權限的使用。</p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><h4 id="設定位置"><a href="#設定位置" class="headerlink" title="設定位置"></a>設定位置</h4><p>build.gradle</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">30</span></span><br><span class="line">    buildToolsVersion <span class="string">&quot;30.0.1&quot;</span></span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId <span class="string">&quot;com.xxx.xxx&quot;</span></span><br><span class="line">        minSdkVersion <span class="number">18</span></span><br><span class="line">        targetSdkVersion <span class="number">26</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">&quot;1.0&quot;</span></span><br><span class="line"></span><br><span class="line">        testInstrumentationRunner <span class="string">&quot;androidx.test.runner.AndroidJUnitRunner&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="版本判斷及應變"><a href="#版本判斷及應變" class="headerlink" title="版本判斷及應變"></a>版本判斷及應變</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.HONEYCOMB) </span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p>官方文檔 <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element">https://developer.android.com/guide/topics/manifest/uses-sdk-element</a><br><a href="https://willy2016.pixnet.net/blog/post/215759103">https://willy2016.pixnet.net/blog/post/215759103</a></p>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+  </entry>
+  <entry>
     <title>SharedPreferences</title>
     <url>/2020/11/17/Android_SharedPreferences/</url>
     <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>儲存簡單資料<br>例如：帳號資料、遊戲關卡、APP喜愛設定等</p>
@@ -157,27 +178,6 @@
       <tags>
         <tag>Android檔案資料存取</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>SdkVersion</title>
-    <url>/2020/11/17/Android_SdkVersion/</url>
-    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>介紹minSdkVersion、compileSdkVersion、targetSdkVersion<br>可通過API的級別來表示應用程序與Android平台的一個或多個版本的兼容性</p>
-<a id="more"></a>
-<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><h4 id="minSdkVersion"><a href="#minSdkVersion" class="headerlink" title="minSdkVersion"></a>minSdkVersion</h4><p>App最小可以支援的版本。(可由Android Studio查詢現有行動裝置的版本比例，藉此確定使用minSdkVersion級別)<br>在Play Store中，用戶的裝置版本若小於APP的minSdkVersion，那Play Store便不向該用戶顯示此App。</p>
-<p>在開發時，會依minSdkVersion來警告你，是否用了高於minSdkVersion的API，避免調用不存在的API，造成運行問題。</p>
-<h4 id="compileSdkVersion"><a href="#compileSdkVersion" class="headerlink" title="compileSdkVersion"></a>compileSdkVersion</h4><p>Gradle用的AndroidSDK編譯版本。<br>官方強烈推薦用最新的SDK進行編譯<br>(在開發中的應用程式，提醒已棄用的API，也為使用新的API做好準備)</p>
-<h4 id="targetSdkVersion"><a href="#targetSdkVersion" class="headerlink" title="targetSdkVersion"></a>targetSdkVersion</h4><p>App最合適的版本，最低通常須依Googlee規定<br>也是向前兼容的主要依據:如果裝置API級別高於您的應用程序聲明的targetSdkVersion，則係統可能會啟用兼容性行為，以確保您的應用程序繼續按您期望的方式運行。<br>舉例:<br>在Android 6.0（API 级别23）及更高版本中，使用一些相對敏感的權限時，需要徵求用戶的許可。<br>若target sdk &lt; 23 ，Android 則會自動用 23 以下的 api 運行，而若是APP運行在android 6.0或以上版本，且target sdk&gt;=23，便需要向其徵求敏感權限的使用。</p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><h4 id="設定位置"><a href="#設定位置" class="headerlink" title="設定位置"></a>設定位置</h4><p>build.gradle</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">30</span></span><br><span class="line">    buildToolsVersion <span class="string">&quot;30.0.1&quot;</span></span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId <span class="string">&quot;com.xxx.xxx&quot;</span></span><br><span class="line">        minSdkVersion <span class="number">18</span></span><br><span class="line">        targetSdkVersion <span class="number">26</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">&quot;1.0&quot;</span></span><br><span class="line"></span><br><span class="line">        testInstrumentationRunner <span class="string">&quot;androidx.test.runner.AndroidJUnitRunner&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="版本判斷及應變"><a href="#版本判斷及應變" class="headerlink" title="版本判斷及應變"></a>版本判斷及應變</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.HONEYCOMB) </span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p>官方文檔 <a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element">https://developer.android.com/guide/topics/manifest/uses-sdk-element</a><br><a href="https://willy2016.pixnet.net/blog/post/215759103">https://willy2016.pixnet.net/blog/post/215759103</a></p>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
   </entry>
   <entry>
     <title>檔案存取-FileInputStream/FileOutputStream.</title>
