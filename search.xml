@@ -38,7 +38,9 @@
 
 <h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>MVVM是Model-View-ViewModel的簡稱，三者扮演的角色為：</p>
 <p>Model：管理專案的資料來源，如API、資料庫和SharedPreference等，並回應來自ViewModel的資料請求。<br>View：可以是Activity、Fragment或custom view，用來顯示UI和監聽使用者動作。當使用者跟UI有互動時，會將指令傳給ViewModel，透過ViewModel來獲得所需的資料並顯示。<br>ViewModel：接收View的指令並對Model請求資料給View使用。</p>
-<h4 id="ViewModel中的3種資料儲存"><a href="#ViewModel中的3種資料儲存" class="headerlink" title="ViewModel中的3種資料儲存"></a>ViewModel中的3種資料儲存</h4><p>1.SavedState:可在資料改變時，即時顯示在View上，並保護資料不會因為進入後台而消失。<br>2.LiveData:可在資料改變時，即時顯示在View上。<br>3.一般:直接在ViewModel中宣告即可使用</p>
+<h4 id="ViewModel中的3種資料儲存"><a href="#ViewModel中的3種資料儲存" class="headerlink" title="ViewModel中的3種資料儲存"></a>ViewModel中的3種資料儲存</h4><p>1.SavedState:可在資料改變時，即時顯示在View上，並保護資料不會因為進入後台而消失。(註:若是再有多個Fragment要使用SavedState，可以將其全寫在Fragment們的Activity中)</p>
+<p>2.LiveData:可在資料改變時，即時顯示在View上。</p>
+<p>3.一般:直接在ViewModel中宣告即可使用</p>
 <img src="/img/ViewModel生命週期.png" width="350px" />  
 
 <p>基本上，ViewModel不會因為進入後台便被銷毀，但在程式擱置過久、空間不夠，或手機設定上不允許程式進入後台活動，ViewModel便會被銷毀。雖然隨著Activity的重建，ViewModel亦可以跟著重建，不過重建後資料都會消失。</p>
@@ -317,32 +319,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Hello World2000 哈囉</title>
-    <url>/2018/04/11/hello-world2/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>程式</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>RGB透明顏色值</title>
     <url>/2020/12/28/RGB%E9%80%8F%E6%98%8E%E9%A1%8F%E8%89%B2%E5%80%BC/</url>
     <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>RGB 與 透明度表示</p>
@@ -446,6 +422,32 @@
       <categories>
         <category>美編</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Hello World2000 哈囉</title>
+    <url>/2018/04/11/hello-world2/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>程式</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>前端</tag>
+      </tags>
   </entry>
   <entry>
     <title>SQLite</title>
