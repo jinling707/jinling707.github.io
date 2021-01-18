@@ -31,6 +31,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Android Gif 使用</title>
+    <url>/2021/01/18/Android_Gif%E5%9C%96%E6%AA%94%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>GifImageView、GifImageButton、GifTextureView、GifTextView的使用</p>
+<a id="more"></a>
+
+<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>在gradle(Project)中的repositories加入mavenCentral() (註:共有兩處需要添加)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        google()</span><br><span class="line">        jcenter()</span><br><span class="line"></span><br><span class="line">        mavenCentral() <span class="comment">//添加處</span></span><br><span class="line">    &#125;</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath <span class="string">&quot;com.android.tools.build:gradle:4.0.1&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        google()</span><br><span class="line">        jcenter()</span><br><span class="line"></span><br><span class="line">        mavenCentral() <span class="comment">//添加處</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">task <span class="title">clean</span><span class="params">(type: Delete)</span> </span>&#123;</span><br><span class="line">    delete rootProject.buildDir</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>在gradle(Module:app)中添加</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">implementation <span class="string">&#x27;pl.droidsonroids.gif:android-gif-drawable:1.1.17&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>添加後即可使用GifImageView、GifImageButton、GifTextureView、GifTextView</p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><p>activity</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">pl.droidsonroids.gif.GifImageView</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/iv&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:src</span>=<span class="string">&quot;@drawable/giphy&quot;</span>/&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p><a href="https://medium.com/@skywing0527/android%E8%87%AA%E5%AD%B8%E7%AD%86%E8%A8%98-15-%E4%BD%BF%E7%94%A8imageview%E6%92%AD%E6%94%BEgif-fb184c2aea56">https://medium.com/@skywing0527/android自學筆記-15-使用imageview播放gif-fb184c2aea56</a></p>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Android_MVVM基本使用</title>
     <url>/2020/11/30/Android_MVVM%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>基本MVVM架構(含ViewMode、DataBinding)</p>
@@ -64,7 +86,7 @@
       </categories>
   </entry>
   <entry>
-    <title>Permission</title>
+    <title>Android Permission</title>
     <url>/2020/11/17/Android_Permission/</url>
     <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>權限的目的是保護Android用戶的隱私。<br>在Android6 sdk23 以上要求使用。</p>
 <a id="more"></a>
@@ -96,7 +118,7 @@
       </categories>
   </entry>
   <entry>
-    <title>SdkVersion</title>
+    <title>Android SdkVersion</title>
     <url>/2020/11/17/Android_SdkVersion/</url>
     <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>介紹minSdkVersion、compileSdkVersion、targetSdkVersion<br>可通過API的級別來表示應用程序與Android平台的一個或多個版本的兼容性</p>
 <a id="more"></a>
@@ -182,34 +204,7 @@
       </tags>
   </entry>
   <entry>
-    <title>檔案存取-FileInputStream/FileOutputStream.</title>
-    <url>/2020/11/30/Android_%E6%AA%94%E6%A1%88%E5%AD%98%E5%8F%96-FileInputStream&amp;FileOutputStream/</url>
-    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>Android裡的本地檔案存取</p>
-<a id="more"></a>
-
-<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>資料儲存在手機中APP的一個專用目錄下(每個APP都會有一個專用目錄):<br>data/data/[package.name]/files/[file_name.*]</p>
-<p>EX:data/data/com.example.fileaccess/files/data1.txt<br>該檔案可在Android Studio中的Device File Explore中察看</p>
-<p>若使用者在設定中清除APP 儲存空間，則files所存的檔案會被清空(為Android本地資料)</p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><p>以下範例為在Activity的環境下</p>
-<h4 id="創建檔案、存入檔案資料"><a href="#創建檔案、存入檔案資料" class="headerlink" title="創建檔案、存入檔案資料"></a>創建檔案、存入檔案資料</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SaveFile</span><span class="params">()</span> <span class="comment">//存在內存裡</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//開啟檔案。若檔案不存在則會新創一個該檔名檔案</span></span><br><span class="line">        FileOutputStream fout = <span class="keyword">this</span>.openFileOutput(<span class="string">&quot;data1.txt&quot;</span>, Context.MODE_PRIVATE); </span><br><span class="line"></span><br><span class="line">        fout.write(<span class="string">&quot;Hello\n\nHI&quot;</span>.getBytes());</span><br><span class="line">        fout.flush();</span><br><span class="line">        fout.close();</span><br><span class="line"></span><br><span class="line">        Toast.makeText(<span class="keyword">this</span>,<span class="string">&quot;Save Ok&quot;</span>,Toast.LENGTH_SHORT).show();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (IOException e)</span><br><span class="line">    &#123;</span><br><span class="line">        Toast.makeText(<span class="keyword">this</span>,<span class="string">&quot;Error&quot;</span>,Toast.LENGTH_SHORT).show();</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="指定操作模式"><a href="#指定操作模式" class="headerlink" title="指定操作模式:"></a>指定操作模式:</h5><p>Context.MODE_PRIVATE = 0<br>預設操作模式，該檔案是私有資料，只能被應用本身訪問，在該模式下，檔案依呈現的寫入，寫入的內容會覆蓋原檔案的內容</p>
-<p>Context.MODE_APPEND = 32768<br>模式會檢查檔案是否存在，存在的話，新資料會在原檔案資料後追加，否則會建立新檔案。</p>
-<p>Context.MODE_WORLD_READABLE = 1<br>表示當前檔案可以被其他應用讀取</p>
-<p>Context.MODE_WORLD_WRITEABLE =  2<br>表示當前檔案可以被其他應用寫入</p>
-<h4 id="讀取檔案資料"><a href="#讀取檔案資料" class="headerlink" title="讀取檔案資料"></a>讀取檔案資料</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ShowFile</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        FileInputStream fin = openFileInput(<span class="string">&quot;data1.txt&quot;</span>);</span><br><span class="line">        BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(fin));</span><br><span class="line"></span><br><span class="line">        String line;</span><br><span class="line">        <span class="keyword">while</span> ((line = br.readLine()) != <span class="keyword">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Log.v(<span class="string">&quot;Tag&quot;</span>,line);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        fin.close();</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">catch</span> (IOException e)</span><br><span class="line">    &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p><a href="https://codertw.com/android-%E9%96%8B%E7%99%BC/351302/">https://codertw.com/android-%E9%96%8B%E7%99%BC/351302/</a></p>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android檔案資料存取</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>檔案存取-SdCard</title>
+    <title>Android檔案存取-SdCard</title>
     <url>/2020/11/30/Android_%E6%AA%94%E6%A1%88%E5%AD%98%E5%8F%96-SdCard/</url>
     <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>Android裡SdCard的檔案儲存(內存與外存)</p>
 <a id="more"></a>
@@ -248,27 +243,6 @@
       <tags>
         <tag>Android檔案資料存取</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>自訂字體</title>
-    <url>/2021/01/07/Android_%E8%87%AA%E8%A8%82%E5%AD%97%E9%AB%94/</url>
-    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>自訂Android系統中的字體</p>
-<a id="more"></a>
-
-<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>自行從網路上下載文字檔案(OpenType 與 TrueType 皆可)。</p>
-<p>另外可選用SIL開源字型授權的字體(SIL Open Font License 1.1)<br>該授權可<br>1 商用，不需付費、知會或標明作者。<br>2 分享檔案、將檔案安裝於任何軟硬體中。<br>3 自由修改。</p>
-<h3 id="在Android中使用字體"><a href="#在Android中使用字體" class="headerlink" title="在Android中使用字體"></a>在Android中使用字體</h3><p>將(.ttf/.otf)檔案放進專案(檔案位置app/src/main/assets/fonts)</p>
-<p>–&gt;在app夾按右鍵<br>–&gt;New<br>–&gt;Folder<br>–&gt;Assets Folder</p>
-<p>在assets創一fonts資料夾將檔案放進專案</p>
-<h3 id="使用範例"><a href="#使用範例" class="headerlink" title="使用範例"></a>使用範例</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Typeface custom_font = Typeface.createFromAsset(getAssets(), <span class="string">&quot;fonts/NaikaiFont-Regular.ttf&quot;</span>);</span><br><span class="line"></span><br><span class="line">textView.setTypeface(custom_font);</span><br><span class="line"></span><br><span class="line">editText.setTypeface(custom_font);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p><a href="http://tw.gitbook.net/android/android_custom_fonts.html">http://tw.gitbook.net/android/android_custom_fonts.html</a></p>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
   </entry>
   <entry>
     <title>Git基本語法</title>
@@ -316,6 +290,27 @@
 ]]></content>
       <categories>
         <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android自訂字體</title>
+    <url>/2021/01/07/Android_%E8%87%AA%E8%A8%82%E5%AD%97%E9%AB%94/</url>
+    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>自訂Android系統中的字體</p>
+<a id="more"></a>
+
+<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>自行從網路上下載文字檔案(OpenType 與 TrueType 皆可)。</p>
+<p>另外可選用SIL開源字型授權的字體(SIL Open Font License 1.1)<br>該授權可<br>1 商用，不需付費、知會或標明作者。<br>2 分享檔案、將檔案安裝於任何軟硬體中。<br>3 自由修改。</p>
+<h3 id="在Android中使用字體"><a href="#在Android中使用字體" class="headerlink" title="在Android中使用字體"></a>在Android中使用字體</h3><p>將(.ttf/.otf)檔案放進專案(檔案位置app/src/main/assets/fonts)</p>
+<p>–&gt;在app夾按右鍵<br>–&gt;New<br>–&gt;Folder<br>–&gt;Assets Folder</p>
+<p>在assets創一fonts資料夾將檔案放進專案</p>
+<h3 id="使用範例"><a href="#使用範例" class="headerlink" title="使用範例"></a>使用範例</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Typeface custom_font = Typeface.createFromAsset(getAssets(), <span class="string">&quot;fonts/NaikaiFont-Regular.ttf&quot;</span>);</span><br><span class="line"></span><br><span class="line">textView.setTypeface(custom_font);</span><br><span class="line"></span><br><span class="line">editText.setTypeface(custom_font);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p><a href="http://tw.gitbook.net/android/android_custom_fonts.html">http://tw.gitbook.net/android/android_custom_fonts.html</a></p>
+]]></content>
+      <categories>
+        <category>Android</category>
       </categories>
   </entry>
   <entry>
@@ -450,7 +445,7 @@
       </tags>
   </entry>
   <entry>
-    <title>SQLite</title>
+    <title>Android SQLite</title>
     <url>/2020/11/30/Android_SQLite/</url>
     <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>Android中本地的數據資料庫</p>
 <a id="more"></a>
