@@ -26,22 +26,21 @@
     var CONFIG = {"hostname":"jinling707.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="簡介Android裡的本地檔案存取">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World2000 哈囉">
-<meta property="og:url" content="https://jinling707.github.io/2018/04/11/hello-world2/index.html">
+<meta property="og:title" content="Android檔案存取-FileInputStream&#x2F;FileOutputStream">
+<meta property="og:url" content="https://jinling707.github.io/2020/11/30/Android_%E6%AA%94%E6%A1%88%E5%AD%98%E5%8F%96-FileInputStream&FileOutputStream/index.html">
 <meta property="og:site_name" content="JIN LING">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="簡介Android裡的本地檔案存取">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2018-04-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-17T09:43:30.969Z">
+<meta property="article:published_time" content="2020-11-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-19T09:02:10.624Z">
 <meta property="article:author" content="Jin Ling">
-<meta property="article:tag" content="java">
-<meta property="article:tag" content="前端">
+<meta property="article:tag" content="Android檔案資料存取">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://jinling707.github.io/2018/04/11/hello-world2/">
+<link rel="canonical" href="https://jinling707.github.io/2020/11/30/Android_%E6%AA%94%E6%A1%88%E5%AD%98%E5%8F%96-FileInputStream&FileOutputStream/">
 
 
 <script class="page-configurations">
@@ -54,7 +53,7 @@
   };
 </script>
 
-  <title>Hello World2000 哈囉 | JIN LING</title>
+  <title>Android檔案存取-FileInputStream/FileOutputStream | JIN LING</title>
   
 
 
@@ -215,7 +214,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AA%AA%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">範例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%B5%E5%BB%BA%E6%AA%94%E6%A1%88%E3%80%81%E5%AD%98%E5%85%A5%E6%AA%94%E6%A1%88%E8%B3%87%E6%96%99"><span class="nav-number">3.1.</span> <span class="nav-text">創建檔案、存入檔案資料</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A%E6%93%8D%E4%BD%9C%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.1.1.</span> <span class="nav-text">指定操作模式:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%80%E5%8F%96%E6%AA%94%E6%A1%88%E8%B3%87%E6%96%99"><span class="nav-number">3.2.</span> <span class="nav-text">讀取檔案資料</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -293,7 +292,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://jinling707.github.io/2018/04/11/hello-world2/">
+    <link itemprop="mainEntityOfPage" href="https://jinling707.github.io/2020/11/30/Android_%E6%AA%94%E6%A1%88%E5%AD%98%E5%8F%96-FileInputStream&FileOutputStream/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar0.jpg">
@@ -306,7 +305,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World2000 哈囉<a href="https://github.com/jinling707/jinling707.github.io/blob/master/source/_posts/hello-world2.md" class="post-edit-link" title="編輯" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+          Android檔案存取-FileInputStream/FileOutputStream<a href="https://github.com/jinling707/jinling707.github.io/blob/master/source/_posts/Android_%E6%AA%94%E6%A1%88%E5%AD%98%E5%8F%96-FileInputStream&FileOutputStream.md" class="post-edit-link" title="編輯" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
 
         <div class="post-meta-container">
@@ -317,14 +316,14 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2018-04-11 00:00:00" itemprop="dateCreated datePublished" datetime="2018-04-11T00:00:00+08:00">2018-04-11</time>
+      <time title="創建時間：2020-11-30 00:00:00" itemprop="dateCreated datePublished" datetime="2020-11-30T00:00:00+08:00">2020-11-30</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新於</span>
-        <time title="修改時間：2020-11-17 17:43:30" itemprop="dateModified" datetime="2020-11-17T17:43:30+08:00">2020-11-17</time>
+        <time title="修改時間：2021-01-19 17:02:10" itemprop="dateModified" datetime="2021-01-19T17:02:10+08:00">2021-01-19</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -332,7 +331,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%A8%8B%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">程式</span></a>
+          <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
         </span>
     </span>
 
@@ -353,20 +352,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+        <h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>Android裡的本地檔案存取</p>
 <a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>資料儲存在手機中APP的一個專用目錄下(每個APP都會有一個專用目錄):<br>data/data/[package.name]/files/[file_name.*]</p>
+<p>EX:data/data/com.example.fileaccess/files/data1.txt<br>該檔案可在Android Studio中的Device File Explore中察看</p>
+<p>若使用者在設定中清除APP 儲存空間，則files所存的檔案會被清空(為Android本地資料)</p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><p>以下範例為在Activity的環境下</p>
+<h4 id="創建檔案、存入檔案資料"><a href="#創建檔案、存入檔案資料" class="headerlink" title="創建檔案、存入檔案資料"></a>創建檔案、存入檔案資料</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SaveFile</span><span class="params">()</span> <span class="comment">//存在內存裡</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//開啟檔案。若檔案不存在則會新創一個該檔名檔案</span></span><br><span class="line">        FileOutputStream fout = <span class="keyword">this</span>.openFileOutput(<span class="string">&quot;data1.txt&quot;</span>, Context.MODE_PRIVATE); </span><br><span class="line"></span><br><span class="line">        fout.write(<span class="string">&quot;Hello\n\nHI&quot;</span>.getBytes());</span><br><span class="line">        fout.flush();</span><br><span class="line">        fout.close();</span><br><span class="line"></span><br><span class="line">        Toast.makeText(<span class="keyword">this</span>,<span class="string">&quot;Save Ok&quot;</span>,Toast.LENGTH_SHORT).show();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (IOException e)</span><br><span class="line">    &#123;</span><br><span class="line">        Toast.makeText(<span class="keyword">this</span>,<span class="string">&quot;Error&quot;</span>,Toast.LENGTH_SHORT).show();</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="指定操作模式"><a href="#指定操作模式" class="headerlink" title="指定操作模式:"></a>指定操作模式:</h5><p>Context.MODE_PRIVATE = 0<br>預設操作模式，該檔案是私有資料，只能被應用本身訪問，在該模式下，檔案依呈現的寫入，寫入的內容會覆蓋原檔案的內容</p>
+<p>Context.MODE_APPEND = 32768<br>模式會檢查檔案是否存在，存在的話，新資料會在原檔案資料後追加，否則會建立新檔案。</p>
+<p>Context.MODE_WORLD_READABLE = 1<br>表示當前檔案可以被其他應用讀取</p>
+<p>Context.MODE_WORLD_WRITEABLE =  2<br>表示當前檔案可以被其他應用寫入</p>
+<h4 id="讀取檔案資料"><a href="#讀取檔案資料" class="headerlink" title="讀取檔案資料"></a>讀取檔案資料</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ShowFile</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        FileInputStream fin = openFileInput(<span class="string">&quot;data1.txt&quot;</span>);</span><br><span class="line">        BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(fin));</span><br><span class="line"></span><br><span class="line">        String line;</span><br><span class="line">        <span class="keyword">while</span> ((line = br.readLine()) != <span class="keyword">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Log.v(<span class="string">&quot;Tag&quot;</span>,line);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        fin.close();</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">catch</span> (IOException e)</span><br><span class="line">    &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p><a target="_blank" rel="noopener" href="https://codertw.com/android-%E9%96%8B%E7%99%BC/351302/">https://codertw.com/android-%E9%96%8B%E7%99%BC/351302/</a></p>
 
     </div>
 
@@ -376,18 +377,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
-              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+              <a href="/tags/Android%E6%AA%94%E6%A1%88%E8%B3%87%E6%96%99%E5%AD%98%E5%8F%96/" rel="tag"><i class="fa fa-tag"></i> Android檔案資料存取</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2020/11/30/Android_%E6%AA%94%E6%A1%88%E5%AD%98%E5%8F%96-SdCard/" rel="prev" title="Android檔案存取-SdCard">
+                  <i class="fa fa-chevron-left"></i> Android檔案存取-SdCard
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/11/13/Android_ForegroundService/" rel="next" title="ForegroundService">
-                  ForegroundService <i class="fa fa-chevron-right"></i>
+                <a href="/2020/11/30/Android_MVVM%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" rel="next" title="Android_MVVM基本使用">
+                  Android_MVVM基本使用 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
