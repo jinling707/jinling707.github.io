@@ -26,16 +26,28 @@
     var CONFIG = {"hostname":"jinling707.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JIN LING">
-<meta property="og:url" content="https://jinling707.github.io/archives/index.html">
+  <meta name="description" content="簡介Google API 實現登入功能 將 Google 登錄機制加入的應用中，讓用戶可使用自己的 Google 帳號進行 Firebase 身份驗證">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Google 登入">
+<meta property="og:url" content="https://jinling707.github.io/2021/02/06/Android%20Google%20%E7%99%BB%E5%85%A5/index.html">
 <meta property="og:site_name" content="JIN LING">
+<meta property="og:description" content="簡介Google API 實現登入功能 將 Google 登錄機制加入的應用中，讓用戶可使用自己的 Google 帳號進行 Firebase 身份驗證">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://jinling707.github.io/img/Android%20Google%20登入0.png">
+<meta property="og:image" content="https://jinling707.github.io/img/Android%20Google%20登入1.png">
+<meta property="og:image" content="https://jinling707.github.io/img/Android%20Google%20登入2.png">
+<meta property="og:image" content="https://jinling707.github.io/img/Android%20Google%20登入3.png">
+<meta property="og:image" content="https://jinling707.github.io/img/Android%20Google%20登入4.png">
+<meta property="og:image" content="https://jinling707.github.io/img/Android%20Google%20登入5.png">
+<meta property="og:image" content="https://jinling707.github.io/img/Android%20Google%20登入6.png">
+<meta property="article:published_time" content="2021-02-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-02-06T05:45:08.958Z">
 <meta property="article:author" content="Jin Ling">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jinling707.github.io/img/Android%20Google%20登入0.png">
 
 
-<link rel="canonical" href="https://jinling707.github.io/archives/">
+<link rel="canonical" href="https://jinling707.github.io/2021/02/06/Android%20Google%20%E7%99%BB%E5%85%A5/">
 
 
 <script class="page-configurations">
@@ -43,12 +55,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>歸檔 | JIN LING</title>
+  <title>Android Google 登入 | JIN LING</title>
   
 
 
@@ -196,7 +208,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -209,6 +221,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AA%AA%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">說明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%88%E6%A1%88%E8%88%87Firebase%E7%9A%84%E9%80%A3%E6%8E%A5"><span class="nav-number">3.</span> <span class="nav-text">專案與Firebase的連接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8Android%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%AD%97%E9%AB%94"><span class="nav-number">4.</span> <span class="nav-text">在Android中使用字體</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%AF%84%E4%BE%8B"><span class="nav-number">5.</span> <span class="nav-text">使用範例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">6.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -273,239 +286,122 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
       
 
       
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共有 15 篇文章。 繼續努力。</span>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://jinling707.github.io/2021/02/06/Android%20Google%20%E7%99%BB%E5%85%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar0.jpg">
+      <meta itemprop="name" content="Jin Ling">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JIN LING">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android Google 登入<a href="https://github.com/jinling707/jinling707.github.io/blob/master/source/_posts/Android%20Google%20%E7%99%BB%E5%85%A5.md" class="post-edit-link" title="編輯" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+      <time title="創建時間：2021-02-06 00:00:00 / 修改時間：13:45:08" itemprop="dateCreated datePublished" datetime="2021-02-06T00:00:00+08:00">2021-02-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>Google API 實現登入功能</p>
+<p>將 Google 登錄機制加入的應用中，讓用戶可使用自己的 Google 帳號進行 Firebase 身份驗證</p>
+<a id="more"></a>
+
+<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>需先申辦Firebase的帳號，並將專案與Firebase的連接。<br>以下將演示登入專案的實現方。</p>
+<h3 id="專案與Firebase的連接"><a href="#專案與Firebase的連接" class="headerlink" title="專案與Firebase的連接"></a>專案與Firebase的連接</h3><p>開啟新專案，點選Tool-&gt;Firebase,待跳出右邊視窗後，選Authentication-&gt;Email and password authentication<br><img src="/img/Android Google 登入0.png" width="350px" /></p>
+<p>點開後將專案將專案與Firebase進行連結<br>不需要事先到Firebase中開啟新專案，直接在以下步驟中創建(Connect your app to Firebase)並連結(Add Firebase Authentication to your app)即可</p>
+<img src="/img/Android Google 登入1.png" width="350px" />
+
+<p>接著到自己的Firebase中的控制台 <a target="_blank" rel="noopener" href="https://console.firebase.google.com/u/3/">https://console.firebase.google.com/u/3/</a> 點選剛剛創建的專案<br><img src="/img/Android Google 登入2.png" width="350px" /></p>
+<p>接著從旁邊的authentication中進入開啟Google登入<br><img src="/img/Android Google 登入3.png" width="350px" /></p>
+<p>再回到Android Studio 點選右邊的 gradle-&gt;點開專案-&gt;Task-&gt;android-&gt;signingReport便可以看到SHA1和SHA-256，等等需要將其加入Firebase的專案中<br>(執行APP時，記得將上面的模式調回app才可以執行)<br><img src="/img/Android Google 登入4.png" width="350px" /></p>
+<p>到Firebase的專案總攬-&gt;專案設定<br><img src="/img/Android Google 登入5.png" width="350px" /></p>
+<p>在專案設定中的一般設定裡，將剛剛的SHA1和SHA-256新增上去，設定好後，下載google-services.json檔<br><img src="/img/Android Google 登入6.png" width="350px" /></p>
+<p>將google-services.json檔放入android專案中的app</p>
+<h3 id="在Android中使用字體"><a href="#在Android中使用字體" class="headerlink" title="在Android中使用字體"></a>在Android中使用字體</h3><p>將(.ttf/.otf)檔案放進專案(檔案位置app/src/main/assets/fonts)</p>
+<p>–&gt;在app夾按右鍵<br>–&gt;New<br>–&gt;Folder<br>–&gt;Assets Folder</p>
+<p>在assets創一fonts資料夾將檔案放進專案</p>
+<h3 id="使用範例"><a href="#使用範例" class="headerlink" title="使用範例"></a>使用範例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Typeface custom_font = Typeface.createFromAsset(getAssets(), <span class="string">&quot;fonts/NaikaiFont-Regular.ttf&quot;</span>);</span><br><span class="line"></span><br><span class="line">textView.setTypeface(custom_font);</span><br><span class="line"></span><br><span class="line">editText.setTypeface(custom_font);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p><a target="_blank" rel="noopener" href="http://tw.gitbook.net/android/android_custom_fonts.html">http://tw.gitbook.net/android/android_custom_fonts.html</a></p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-06T00:00:00+08:00"
-              content="2021-02-06">
-          02-06
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/06/Android%20Google%20%E7%99%BB%E5%85%A5/" itemprop="url">
-            <span itemprop="name">Android Google 登入</span>
-          </a>
-      </div>
+    <footer class="post-footer">
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/01/20/Android_APP%20Icon%E8%A6%8F%E7%AF%84/" rel="prev" title="Android APP Icon規範">
+                  <i class="fa fa-chevron-left"></i> Android APP Icon規範
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-01-20T00:00:00+08:00"
-              content="2021-01-20">
-          01-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/01/20/Android_APP%20Icon%E8%A6%8F%E7%AF%84/" itemprop="url">
-            <span itemprop="name">Android APP Icon規範</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-01-18T00:00:00+08:00"
-              content="2021-01-18">
-          01-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/01/18/Android_Gif%E5%9C%96%E6%AA%94%E4%BD%BF%E7%94%A8/" itemprop="url">
-            <span itemprop="name">Android Gif 使用</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-01-07T00:00:00+08:00"
-              content="2021-01-07">
-          01-07
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/01/07/Android_%E8%87%AA%E8%A8%82%E5%AD%97%E9%AB%94/" itemprop="url">
-            <span itemprop="name">Android自訂字體</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-12-28T00:00:00+08:00"
-              content="2020-12-28">
-          12-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/12/28/RGB%E9%80%8F%E6%98%8E%E9%A1%8F%E8%89%B2%E5%80%BC/" itemprop="url">
-            <span itemprop="name">RGB透明顏色值</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-12-02T00:00:00+08:00"
-              content="2020-12-02">
-          12-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/12/02/Git_%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95/" itemprop="url">
-            <span itemprop="name">Git基本語法</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-11-30T00:00:00+08:00"
-              content="2020-11-30">
-          11-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/11/30/Android_MVVM%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" itemprop="url">
-            <span itemprop="name">Android_MVVM基本使用</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-11-30T00:00:00+08:00"
-              content="2020-11-30">
-          11-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/11/30/Android_%E6%AA%94%E6%A1%88%E5%AD%98%E5%8F%96-FileInputStream&FileOutputStream/" itemprop="url">
-            <span itemprop="name">Android檔案存取-FileInputStream/FileOutputStream</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-11-30T00:00:00+08:00"
-              content="2020-11-30">
-          11-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/11/30/Android_%E6%AA%94%E6%A1%88%E5%AD%98%E5%8F%96-SdCard/" itemprop="url">
-            <span itemprop="name">Android檔案存取-SdCard</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-11-30T00:00:00+08:00"
-              content="2020-11-30">
-          11-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/11/30/Android_SQLite/" itemprop="url">
-            <span itemprop="name">Android SQLite</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
-  </nav>
 
 
 
