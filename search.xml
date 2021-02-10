@@ -164,28 +164,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Android Gif 使用</title>
-    <url>/2021/01/18/Android_Gif%E5%9C%96%E6%AA%94%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>GifImageView、GifImageButton、GifTextureView、GifTextView的使用</p>
-<a id="more"></a>
-
-<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>在gradle(Project)中的repositories加入mavenCentral() (註:共有兩處需要添加)</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        google()</span><br><span class="line">        jcenter()</span><br><span class="line"></span><br><span class="line">        mavenCentral() <span class="comment">//添加處</span></span><br><span class="line">    &#125;</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath <span class="string">&quot;com.android.tools.build:gradle:4.0.1&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        google()</span><br><span class="line">        jcenter()</span><br><span class="line"></span><br><span class="line">        mavenCentral() <span class="comment">//添加處</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">task <span class="title">clean</span><span class="params">(type: Delete)</span> </span>&#123;</span><br><span class="line">    delete rootProject.buildDir</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>在gradle(Module:app)中添加</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">implementation <span class="string">&#x27;pl.droidsonroids.gif:android-gif-drawable:1.1.17&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>添加後即可使用GifImageView、GifImageButton、GifTextureView、GifTextView</p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><p>activity</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">pl.droidsonroids.gif.GifImageView</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/iv&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:src</span>=<span class="string">&quot;@drawable/giphy&quot;</span>/&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p><a href="https://medium.com/@skywing0527/android%E8%87%AA%E5%AD%B8%E7%AD%86%E8%A8%98-15-%E4%BD%BF%E7%94%A8imageview%E6%92%AD%E6%94%BEgif-fb184c2aea56">https://medium.com/@skywing0527/android自學筆記-15-使用imageview播放gif-fb184c2aea56</a></p>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Android_MVVM基本使用</title>
     <url>/2020/11/30/Android_MVVM%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>基本MVVM架構(含ViewMode、DataBinding)</p>
@@ -213,6 +191,28 @@
 
 <h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p><a href="https://www.youtube.com/watch?v=uonkx0G2lng&amp;list=PLPh5-KovAYtFyX5elSTT9wEMt0HxMhR7L&amp;index=14">https://www.youtube.com/watch?v=uonkx0G2lng&amp;list=PLPh5-KovAYtFyX5elSTT9wEMt0HxMhR7L&amp;index=14</a></p>
 <h3 id="檔案下載"><a href="#檔案下載" class="headerlink" title="檔案下載"></a>檔案下載</h3><p>檔案下載: <a href="https://github.com/jinling707/ViewModelExample">Download Code</a></p>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android Gif 使用</title>
+    <url>/2021/01/18/Android_Gif%E5%9C%96%E6%AA%94%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>GifImageView、GifImageButton、GifTextureView、GifTextView的使用</p>
+<a id="more"></a>
+
+<h3 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h3><p>在gradle(Project)中的repositories加入mavenCentral() (註:共有兩處需要添加)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        google()</span><br><span class="line">        jcenter()</span><br><span class="line"></span><br><span class="line">        mavenCentral() <span class="comment">//添加處</span></span><br><span class="line">    &#125;</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath <span class="string">&quot;com.android.tools.build:gradle:4.0.1&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        google()</span><br><span class="line">        jcenter()</span><br><span class="line"></span><br><span class="line">        mavenCentral() <span class="comment">//添加處</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">task <span class="title">clean</span><span class="params">(type: Delete)</span> </span>&#123;</span><br><span class="line">    delete rootProject.buildDir</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>在gradle(Module:app)中添加</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">implementation <span class="string">&#x27;pl.droidsonroids.gif:android-gif-drawable:1.1.17&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>添加後即可使用GifImageView、GifImageButton、GifTextureView、GifTextView</p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><p>activity</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">pl.droidsonroids.gif.GifImageView</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/iv&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">&quot;wrap_content&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:src</span>=<span class="string">&quot;@drawable/giphy&quot;</span>/&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><p><a href="https://medium.com/@skywing0527/android%E8%87%AA%E5%AD%B8%E7%AD%86%E8%A8%98-15-%E4%BD%BF%E7%94%A8imageview%E6%92%AD%E6%94%BEgif-fb184c2aea56">https://medium.com/@skywing0527/android自學筆記-15-使用imageview播放gif-fb184c2aea56</a></p>
 ]]></content>
       <categories>
         <category>Android</category>
